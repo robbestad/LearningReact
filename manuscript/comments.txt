@@ -1,0 +1,6 @@
+# Commenting in JSX
+
+    <div>
+      {/* this is a comment */}
+    </div>
+
