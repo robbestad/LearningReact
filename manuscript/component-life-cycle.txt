@@ -12,7 +12,8 @@ These are the methods that are available in the initial render of your component
 
 This method is invoked once before the component is mounted. The return value will be used as the initial value of this.state.
 
-<<(code/getinitialstate.js)
+A><<(code/getinitialstate.js)
+
 
 ### Get Default Props
 
