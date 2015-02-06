@@ -2,6 +2,8 @@
 
 When creating a component class by invoking you should provide an object that contains a render method and can optionally contain other lifecycle methods described here.
 
+![testpng](test.png)
+
 ## Initial Render
 
 These are the methods that are available in the initial render of your component.
