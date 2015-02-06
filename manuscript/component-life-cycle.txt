@@ -1,45 +1,75 @@
-# Component Life Cycle 
+# Component Lifecycle 
 
-When creating a component class by invoking React.createClass(), you should provide a specification object that contains a render method and can optionally contain other lifecycle methods described here
+When creating a component class by invoking you should provide an object that contains a render method and can optionally contain other lifecycle methods described here.
 
 ## Initial Render
 
 These are the methods that are available in the initial render of your component.
 
 ### Get Initial State
-Sets initial value of this.state
 
-      getInitialState: function () {
+This method is invoked once before the component is mounted. The return value will be used as the initial value of this.state.
+
+    getInitialState: function () {
         return {
             key: "value"
         };
-    },
-
+    };
 
 ### Get Default Props
-Sets initial value of this.props
+
+This method is invoked once and cached when the class is created. Values in the mapping will be set on this.props if that prop is not specified by the parent component.
+
+This method is invoked before any instances are created and thus cannot rely on this.props. In addition, be aware that any complex objects returned by getDefaultProps() will be shared across instances, not copied.
+
+    getDefaultProps: function () {
+        return {
+            key: "value"
+        };
+    };
 
 ### Component Will Mount
-Calling setState here does not cause a re-render
-You cannot call setProps here because setProps can only be set on a mounted component.
+
+Invoked once, both on the client and server, immediately before the initial rendering occurs. If you call setState within this method, render() will see the updated state and will be executed only once despite the state change. In other words, calling setState here does not cause a re-render.
+
+You cannot call setProps here because setting properties can only be done on a mounted component.
 
 ### Render
-Returns JSX for component
-Never update state here
+The render() method is required when you create a class with _React.createClass()_.
 
-### Component Will Mount
-Called immediately after render
+The render method returns the compiled JSX for the component. Anything you return here must be wrapped in a root node with optional content inside. You can also return _null_ or _false_ to indicate that you don't want anything rendered. When returning _null_ or _false_, _this.getDOMNode()_ will return null.
 
+The _render()__ function should be pure. It should not not modify component state, meaning that it returns the same result each time it's invoked.
+
+If you need to interact with the browser, perform your work in componentDidMount() or the other lifecycle methods instead. 
+
+Keeping render() pure makes server rendering more practical and makes components easier to think about. Additionally, if you do something like use setState() here, the component will trigger a rerender and will result in an infinite loop.
+
+### Component Did Mount
+
+Invoked once, only on the client (not on the server), immediately after the initial rendering occurs. At this point in the lifecycle, the component has a DOM representation which you can access via _this.getDOMNode()_.
+
+If you want to *integrate with other JavaScript frameworks*, set timers using setTimeout or setInterval, or send AJAX requests, perform those operations in this method.
 
 ## On props change
 
 ### Component will receive props
-Not called for initial render
+Invoked when a component is receiving new props. This method is not called for the initial render.
+
+Use this as an opportunity to react to a prop transition before _render()__ is called by updating the state using _this.setState()_. The old props can be accessed via this.props. Calling _this.setState()__ within this function will not trigger an additional render.
+
 - Takes nextprops as input
 - Previous props available 
 as this.props
 - Calling setState() here does
 not trigger re-render
+
+    componentWillReceiveProps: function(nextProps) {
+      this.setState({
+        likesIncreasing: nextProps.likeCount > this.props.likeCount
+      });
+    }
+
 
 ### Should component update
 Not called for initial render
