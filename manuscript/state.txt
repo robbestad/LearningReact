@@ -1,0 +1,11 @@
+# State
+
+For data changes in the component. 
+Treat as mutable data
+
+State changes is updated by calling setState()
+
+Every call to setState() triggers a re-render
+
+(except when called within
+componentDidMount or componentWillReceiveProps)

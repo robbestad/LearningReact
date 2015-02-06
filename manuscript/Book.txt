@@ -1,4 +1,7 @@
 chapter1.txt
 chapter2.txt
 mixins.txt
+state.txt
+props.txt
+component-life-cycle.txt
 comments.txt

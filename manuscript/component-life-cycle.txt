@@ -1,0 +1,75 @@
+# Component Life Cycle 
+
+# Initial Render
+
+These are the methods that are available in the initial render of your component.
+
+## Get Initial State
+Sets initial value of this.state
+
+## Get Default Props
+Sets initial value of this.props
+
+## Component Will Mount
+Calling setState here does not cause a re-render
+You cannot call setProps here because setProps can only be set on a mounted component.
+
+## Render
+Returns JSX for component
+Never update state here
+
+## Component Will Mount
+Called immediately after render
+
+
+# On props change
+
+## Component will receive props
+Not called for initial render
+- Takes nextprops as input
+- Previous props available 
+as this.props
+- Calling setState() here does
+not trigger re-render
+
+## Should component update
+Not called for initial render
+Can abort render if you
+return false here. If false,
+componentWillUpdate and 
+componentDidUpdate will not
+be called.
+
+## Component will update
+Not called for initial render
+nextProps, nextState available
+here
+Cannot use setState() here
+
+## Render
+
+## Component did update
+Not called for initial render
+Called immediately after render
+
+# On State change
+
+## Should component update
+Not called for initial render
+
+## Component will update
+Not called for initial render
+
+## Render
+
+## Component Did Update
+Not called for initial render
+Called immediately after render
+
+# Unmount
+## Component will unmount
+Not called for initial render
+Invoked immediately before
+component is unmounted.
+For cleanup, invalidating 
+timers etc.

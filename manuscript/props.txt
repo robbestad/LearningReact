@@ -1,0 +1,5 @@
+# Props
+
+For data passed to the component
+
+Should be treated as immutable.
