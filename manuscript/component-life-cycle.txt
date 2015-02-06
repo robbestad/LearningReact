@@ -2,8 +2,7 @@
 
 When creating a component class by invoking you should provide an object that contains a render method and can optionally contain other lifecycle methods described here.
 
-
-![testpng](./test.png)
+![testpng](images/test.png)
 
 ## Initial Render
 
@@ -13,11 +12,7 @@ These are the methods that are available in the initial render of your component
 
 This method is invoked once before the component is mounted. The return value will be used as the initial value of this.state.
 
-    getInitialState: function () {
-        return {
-            key: "value"
-        };
-    };
+<<(code/getinitialstate.js)
 
 ### Get Default Props
 
