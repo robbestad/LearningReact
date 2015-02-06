@@ -1,0 +1,22 @@
+# React
+
+## React gives you
+
+A lightweight virtual DOM
+
+Powerful views without templates
+
+Unidirectional data flow
+
+Explicit mutation
+
+## Reusable components
+Components makes code reuse, testing, and separation of concerns easy.
+
+
+## Not just the V
+From the beginning, React was presented as the V in MVC. 
+
+This is at best a huge simplification. 
+
+React has state, it handles mapping from input to state changes, and it renders components. In this sense, it does everything that an MVC does. 
