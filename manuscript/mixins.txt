@@ -1,5 +1,8 @@
 # Mixins 
 
-It was a **bold** and *italic* night!
+Mixins are small reusable components that you can include in your workflow. 
 
-Suddenly, a shot rang out!
+T> Whenever you need to repeat a code block in your components, consider making the code block into a mixin and include the mixin rather than duplicating your code.
+
+
+
