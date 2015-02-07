@@ -1,16 +1,15 @@
 # React
 
-## React gives you
+React is a JavaScript library for building user interfaces. It doesn't bill itself as a complete framework that can do everything under the moon, but has a straight and narrow focus on rendering components to the screen.
 
-A lightweight virtual DOM
+It implements a lightweight virtual DOM to render HTML lightning fast on the screen. It provides powerful views that render the whole notion of templates as a thing of the past. 
 
-Powerful views without templates
+Even more exciting is the implicit focus on a unidirectional data flow. In a React component, data flows only one way. This makes it easy to visualize the stream of data, and removes the headache of worrying about you losing track of where data mutation happens in your app. 
 
-Unidirectional data flow
+## A React app is made up of reusable components
 
-Explicit mutation
 
-## Reusable components
+
 Components makes code reuse, testing, and separation of concerns easy.
 
 

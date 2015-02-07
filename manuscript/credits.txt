@@ -1,0 +1,1 @@
+"React.js logo" by Facebook - https://github.com/facebook/react/blob/master/docs/img/logo.svg. Licensed under CC BY 3.0 via Wikimedia Commons.
