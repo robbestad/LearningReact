@@ -3,5 +3,5 @@ intro.txt
 mixins.txt
 state.txt
 props.txt
-component-life-cycle.txt
+component-life-cycle.md
 comments.txt
